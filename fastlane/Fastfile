@@ -1,0 +1,786 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+# 
+# reviewed by Stephan Breidenbach on 25.11.2022
+# reviewed by Stephan Breidenbach on 29.11.2022
+# reviewed by Stephan Breidenbach on 30.11.2022
+# 
+# $ bundle exec fastlane [lane] \
+#     marketingVersion:"1.0.0" \
+#     key2:value2
+
+
+# https://github.com/bkeepers/dotenv
+fastlane_require 'dotenv/load'
+
+if ENV['CI'] == "true"
+  puts "You are running fastlane on CI!"
+else 
+  puts "You are running fastlane manually!"
+end # if
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+desc "before all"
+  before_all do |lane, options|
+    puts "before_all: "
+    begin
+      #private lane
+      puts_shell_parameter(marketingVersion: options[:marketingVersion])
+    rescue => ex
+      UI.error ex
+      UI.user_error!("Shell parameter error!")
+    end # puts shell parameter
+
+    # load environment variables from '.env' 
+    Dotenv.load
+    begin
+      # private lane
+      puts_dotenv_variables
+    rescue => ex
+      UI.error ex
+      UI.user_error!("Environment variable error!")
+    end # puts dotenv variables
+  end # before_all
+
+# This block will get executed before running the requested lane.
+# It supports the same actions as lanes.
+desc "before each lane"
+  before_each do |lane, options|
+    puts "before_each: execute lane: #{lane}"
+  end # end before_each
+
+# This block will get executed after running the requested lane.
+# It supports the same actions as lanes.
+# It will only be called, if the selected lane was executed successfully.
+desc "after each lane"
+  after_each do |lane, options|
+    puts "after_each: #{lane}"
+  end # end after_each
+
+# This block will get executed when an error occurs,
+# in any of the blocks (before_all, the lane itself or after_all)
+desc "error"
+  error do |lane, exception, options|
+    puts "error: #{ exception }"
+  end # end error
+
+platform :ios do
+  desc "Sync signing"
+    lane :signing do |options|
+      match(
+        type: "appstore",
+        app_identifier: "de.solingen.app",
+        git_url: "https://git-dev.solingen.de/smartcityapp/solingenapp-certs-ios.git",
+        template_name: "User Notification Critical Alerts (Distribution)",
+        readonly: is_ci
+      )
+
+      mapping = Actions.lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "Solingen.xcodeproj",
+        targets: "Solingen",
+        build_configurations: "Release",
+        code_sign_identity: "iPhone Distribution",
+        team_id: "RSJ53UGKPZ",
+        profile_name: mapping["de.solingen.app"]
+      )
+
+      match(
+        type: "appstore",
+        app_identifier: "de.solingen.app.watchkitapp",
+        git_url: "https://git-dev.solingen.de/smartcityapp/solingenapp-certs-ios.git",
+        template_name: "User Notification Critical Alerts watchOS (Distribution)",
+        readonly: is_ci
+      )
+      
+      mapping = Actions.lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "Solingen.xcodeproj",
+        targets: "SolingenWatch",
+        build_configurations: "Release",
+        code_sign_identity: "iPhone Distribution",
+        team_id: "RSJ53UGKPZ",
+        profile_name: mapping["de.solingen.app.watchkitapp"]
+      )
+
+      match(
+        type: "appstore",
+        app_identifier: "de.solingen.app.watchkitapp.watchkitextension",
+        git_url: "https://git-dev.solingen.de/smartcityapp/solingenapp-certs-ios.git",
+        template_name: "User Notification Critical Alerts watchOS (Distribution)",
+        readonly: is_ci
+      )
+      
+      mapping = Actions.lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "Solingen.xcodeproj",
+        targets: "SolingenWatch Extension",
+        build_configurations: "Release",
+        code_sign_identity: "iPhone Distribution",
+        team_id: "RSJ53UGKPZ",
+        profile_name: mapping["de.solingen.app.watchkitapp.watchkitextension"]
+      )
+
+    end # lane :signing
+
+  desc "Build binary"
+    lane :build do |options|
+      # private lane
+      # set_build_version
+      # private lane
+      # set_marketing_version(marketingVersion: options[:marketingVersion])
+      
+      # Get Certificates
+      #signing
+
+      # xcodebuild(
+      #   project: ENV['OSCA_MODULE_PROJECT_PATH'],
+      #   scheme: "#{ ENV['OSCA_MODULE_NAME'] }-Universal",
+      #   configuration: "Release",
+      #   clean: true,
+      #   build: true
+      # )# end xcodebuild
+
+      build_ios_app(
+        project: ENV['OSCA_MODULE_PROJECT_PATH'], 
+        scheme: ENV['OSCA_MODULE_NAME'], 
+        output_directory: "build/ios",
+        clean: true, 
+        silent: true,
+        configuration: "Release",
+        destination: "generic/platform=iOS Simulator", 
+        skip_package_ipa: true, 
+        include_symbols: false, 
+        skip_archive: false,
+        # export_method: "package",
+        archive_path: "build/ios/OSCAEssentials.framework-iphonesimulator",
+        xcargs: ["BUILD_LIBRARIES_FOR_DISTRIBUTION=YES"]
+      )# end buildIosApp
+
+      # build_ios_app(
+      #   project: ENV['OSCA_MODULE_PROJECT_PATH'],
+      #   scheme: "OSCAEssentials",
+      #   configuration: "Release",
+      #   clean: true,
+      #   silent: true,
+      #   skip_package_ipa: true,
+      #   skip_archive: true,
+      #   skip_codesigning: true,
+      #   output_directory: "build/ios",
+      #   output_name: "OSCAEssentials.framework",
+      #   build_path: "build/ios",
+      #   include_symbols: true,
+      #   include_bitcode: true,
+      #   export_method: "validation",
+      #   suppress_xcode_output: false
+      # ) # end build_ios_app
+    end # lane :build
+
+  desc "export module in a xcframework"
+    lane :export do
+      # plugin fastlane-plugin-create_xcframework
+      create_xcframework(
+        project: ENV['OSCA_MODULE_PROJECT_PATH'], 
+        scheme: ENV['OSCA_MODULE_NAME'], 
+        product_name: ENV['OSCA_MODULE_NAME'], 
+        # destinations: [
+        #   "iOS",
+        #   # "iPadOS",
+        #   # "tvOS",
+        #   "watchOS"#,
+        #   # "carPlayOS",
+        #   # "macOS" #,
+        #   # "maccatalyst"
+        # ],
+        xcframework_output_directory: "build",
+        remove_xcarchives: true
+      )# end create_xcframework
+    end # end lane export
+
+  desc "Run UNIT Tests"
+    lane :test do |options|
+      # private lane
+      puts_ci_env_variables
+      # Run Tests
+      run_tests(
+        devices: ["iPhone 14 Pro"], 
+        scheme: "OSCAEssentials",
+        project: "./OSCAEssentials/OSCAEssentials.xcodeproj",
+        skip_detect_devices: true,
+        )
+    end # lane :test
+
+  desc "Release to Testflight Internal Tester"
+    lane :beta_for_internal_tester do |options|
+      # set app store connect api key
+      app_store_connect_api_key(
+        key_id: "7XTJJB8PFC",
+        issuer_id: "8b039667-6f5e-4508-908b-bc0cb43c3abc",
+        key_filepath: "~/.gitlab-runner/AuthKey_7XTJJB8PFC.p8",
+        duration: 1200, # optional (maximum 1200)
+        in_house: false # optional but may be required if using match/sigh
+      )
+
+      # check if git has checkouts
+      ensure_git_status_clean
+
+      # build release
+      #build # build was done by ci before
+      
+      # read the changelog
+      changelog = read_changelog
+
+      # upload metadata and binary to App Store Connect as Testflight
+      upload_to_testflight(
+        changelog: changelog,
+        #username: "roland.krueger@solingen.de",
+        beta_app_review_info: {
+          contact_email: ENV["TESTFLIGHT_USER"],
+          contact_first_name: ENV["TESTFLIGHT_FIRST_NAME"],
+          contact_last_name: ENV["TESTFLIGHT_LAST_NAME"],
+          contact_phone: ENV["TESTFLIGHT_PHONE"],
+          demo_account_name: "4eb7ZEvFCJ",
+          demo_account_password: "4eb7ZEvFCJ",
+          notes: ENV["TESTFLIGHT_REVIEW_NOTES"]},
+        demo_account_required: true,
+        beta_app_feedback_email: "appdev@solingen.de",
+        beta_app_description: ENV["TESTFLIGHT_APP_DESCRIPTION"],
+        notify_external_testers: false,
+        ipa: "build/ios/Solingen.ipa",
+        distribute_external: false,
+        expire_previous_builds: false,
+        reject_build_waiting_for_review: false
+      )
+    end # lane :beta_for_internal_tester
+
+  desc "Release to Testflight External Tester"
+    lane :beta_for_external_tester do |options|
+      # set app store connect api key
+      app_store_connect_api_key(
+        key_id: "7XTJJB8PFC",
+        issuer_id: "8b039667-6f5e-4508-908b-bc0cb43c3abc",
+        key_filepath: "~/.gitlab-runner/AuthKey_7XTJJB8PFC.p8",
+        duration: 1200, # optional (maximum 1200)
+        in_house: false # optional but may be required if using match/sigh
+      )
+
+      # check if git has checkouts
+      ensure_git_status_clean
+
+      # build release
+      #build # build was done by ci before
+      
+      # check if build was uploaded before as internal version
+      actual_testflight_build = latest_testflight_build_number(version: marketing_version)
+      actual_build = get_build_number()
+      
+      if actual_build == actual_testflight_build
+        # this verion is already uploaded to the testflight
+      else
+        # read the changelog
+        changelog = read_changelog
+
+        # upload metadata and binary to App Store Connect as Testflight
+        upload_to_testflight(
+          changelog: changelog,
+          #username: "roland.krueger@solingen.de",
+          beta_app_review_info: {
+            contact_email: ENV["TESTFLIGHT_USER"],
+            contact_first_name: ENV["TESTFLIGHT_FIRST_NAME"],
+            contact_last_name: ENV["TESTFLIGHT_LAST_NAME"],
+            contact_phone: ENV["TESTFLIGHT_PHONE"],
+            demo_account_name: "4eb7ZEvFCJ",
+            demo_account_password: "4eb7ZEvFCJ",
+            notes: ENV["TESTFLIGHT_REVIEW_NOTES"]},
+          demo_account_required: true,
+          beta_app_feedback_email: "appdev@solingen.de",
+          beta_app_description: ENV["TESTFLIGHT_APP_DESCRIPTION"],
+          notify_external_testers: true,
+          ipa: "build/ios/Solingen.ipa",
+          distribute_external: true,
+          expire_previous_builds: false,
+          reject_build_waiting_for_review: false,
+          groups: "Stadt Solingen"
+        )
+      end
+    end # lane :beta_for_external_tester
+
+  desc "Release binary"
+    lane :release do |options|
+      # set app store connect api key
+      app_store_connect_api_key(
+        key_id: "7XTJJB8PFC",
+        issuer_id: "8b039667-6f5e-4508-908b-bc0cb43c3abc",
+        key_filepath: "~/.gitlab-runner/AuthKey_7XTJJB8PFC.p8",
+        duration: 1200, # optional (maximum 1200)
+        in_house: false # optional but may be required if using match/sigh
+      )
+
+      # check if git has checkouts
+      ensure_git_status_clean
+      # check if branch is master
+      #ensure_git_branch # will be done by ci
+
+      # build release
+      #build # build was done by ci before
+
+      # upload metadata and binary to App Store Connect (via deliver)
+      upload_to_app_store
+      
+      # set tag to gitrepository
+      if ENV['CI'] == "true"
+        set_git_tag
+      else
+        prompt_for_git_tag
+      end
+
+      # stamp the changelog
+      stamp_changelog_and_push
+
+      # Read the changelog
+      #changelog = read_changelog
+    
+      # Set actual repository to github release
+      #set_github_release(
+      #  repository_name: "mammutmedia/solingenapp-ios",
+      #  api_token: ENV["GITHUB_TOKEN"],
+      #  tag_name: "",
+      #  description: changelog,
+      #  commitish: "master",
+      #  upload_assets: "build/ios/Solingen.ipa"
+      #)
+    end # lane: release
+
+  desc "Gets dev certs"
+    lane :development do |options|
+      match(
+        type: "development",
+        app_identifier: "de.solingen.app",
+        template_name: "User Notification Critical Alerts (Development)",
+        readonly: is_ci
+      )
+
+      mapping = Actions.lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "Solingen.xcodeproj",
+        targets: "Solingen",
+        build_configurations: "Debug",
+        code_sign_identity: "iPhone Developer",
+        team_id: "RSJ53UGKPZ",
+        profile_name: mapping["de.solingen.app"]
+      )
+
+      match(
+        type: "development",
+        app_identifier: ["de.solingen.app.watchkitapp"],
+        template_name: "User Notification Critical Alerts watchOS (Development)",
+        readonly: is_ci
+      )
+
+      mapping = Actions.lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "Solingen.xcodeproj",
+        targets: "SolingenWatch",
+        build_configurations: "Debug",
+        code_sign_identity: "iPhone Developer",
+        team_id: "RSJ53UGKPZ",
+        profile_name: mapping["de.solingen.app.watchkitapp"]
+      )
+
+      match(
+        type: "development",
+        app_identifier: "de.solingen.app.watchkitapp.watchkitextension",
+        template_name: "User Notification Critical Alerts watchOS (Development)",
+        readonly: is_ci
+      )
+      
+      mapping = Actions.lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+      update_code_signing_settings(
+        use_automatic_signing: false,
+        path: "Solingen.xcodeproj",
+        targets: "SolingenWatch Extension",
+        build_configurations: "Debug",
+        code_sign_identity: "iPhone Developer",
+        team_id: "RSJ53UGKPZ",
+        profile_name: mapping["de.solingen.app.watchkitapp.watchkitextension"]
+      )
+    end # lane :development
+
+  desc "Set the marketing version specified in env variable"
+    private_lane :set_marketing_version do |options|
+      # # set a specific version number on XCode project
+      # increment_version_number(
+      #   version_number: options[:marketingVersion],
+      #   xcodeproj: ENV['OSCA_MODULE_PROJECT_PATH']
+      # )# end increment_version_number
+
+      # plugin versioning
+      increment_version_number_in_xcodeproj(
+        version_number: options[:marketingVersion],
+        xcodeproj: ENV['OSCA_MODULE_PROJECT_PATH'],
+        target: ENV['OSCA_MODULE_NAME']
+      )# end increment_version_number_in_xcodeproj
+
+      marketing_version = get_version_number(
+        xcodeproj: ENV['OSCA_MODULE_PROJECT_PATH']
+      )# end get_version_number
+
+      UI.message("Version number set to #{marketing_version}")
+    end # private_lane :set_marketing_version
+
+  desc "Set the build version"
+    private_lane :set_build_version do |options|
+      old_build_number = get_build_number(
+        xcodeproj: ENV['OSCA_MODULE_PROJECT_PATH']
+      )# end get_build_number
+      build_suffix = old_build_number[-1, 1].to_i
+      divider_pos = old_build_number.index(".")
+      build_main = old_build_number[0..divider_pos - 1]
+      if ENV['CI'] == "true"
+        build_number = Time.new.strftime("%Y%m%d") + "." + ENV['CI_JOB_ID']
+      else
+        if build_main == Time.new.strftime("%Y%m%d")
+          build_number = Time.new.strftime("%Y%m%d") + "." + (build_suffix + 1).to_s
+        else
+          build_number = Time.new.strftime("%Y%m%d") + ".1"
+        end
+      end
+      # plugin versioning
+      # increment_build_number_in_plist(
+      #   build_number:  build_number,
+      #   xcodeproj: ENV['OSCA_MODULE_PROJECT_PATH']
+      # )# end increment_build_number
+      increment_build_number(
+        build_number: build_number,
+        xcodeproj: ENV['OSCA_MODULE_PROJECT_PATH']
+      )# end increment_build_number
+      UI.message("Build number set to #{build_number}")
+    end # private_lane :set_build_version
+
+  desc "stamp changelog and push"
+    private_lane :stamp_changelog_and_push do |options|
+      stamp_changelog(
+        section_identifier: lane_context[SharedValues::VERSION_NUMBER],
+        git_tag: lane_context[SharedValues::VERSION_NUMBER]
+        #stamp_date: Time.new.strftime("%Y-%m-%d")
+      )
+      git_commit(
+        path: "CHANGELOG.md",
+        message: "[ci skip] update changelog"
+      )
+      if ENV['CI'] == "true"
+        push_to_git_remote(
+          remote: "origin",
+          local_branch: "HEAD",
+          remote_branch: ENV['CI_COMMIT_REF_NAME'],
+          push_options: ["ci.skip"]
+        )
+      else
+        push_to_git_remote(
+          remote: "origin"
+        )
+      end
+    end # private_lane :stamp_changelog_and_push
+
+  desc "set git TAG"
+    private_lane :set_git_tag do |options|
+      add_git_tag(tag: lane_context[SharedValues::VERSION_NUMBER])
+      push_git_tags
+    end # private_lane :set_git_tag
+
+  desc "prompt for git TAG"
+    private_lane :prompt_for_git_tag do |options|
+      if UI.confirm "Commit version bump and Tag this version?"
+        #commit_version_bump(
+        #  message: "[ci skip] version bump to #{lane_context[SharedValues::VERSION_NUMBER]}"
+        #)
+        add_git_tag(tag: lane_context[SharedValues::VERSION_NUMBER])
+        push_git_tags
+
+        stamp_changelog(
+          section_identifier: lane_context[SharedValues::VERSION_NUMBER],
+          git_tag: lane_context[SharedValues::VERSION_NUMBER],
+          stamp_date: Time.new.strftime("%Y-%m-%d")
+        )
+        git_commit(
+          path: "CHANGELOG.md",
+          message: "[ci skip] update changelog"
+        )
+      #else
+        #commit_version_bump(
+        #  message: "[ci skip] version bump to #{lane_context[SharedValues::VERSION_NUMBER]}"
+        #)
+      end
+
+      if ENV['CI'] == "true"
+        push_to_git_remote(
+          remote: "origin",
+          local_branch: "HEAD",
+          remote_branch: ENV['CI_COMMIT_REF_NAME'],
+          push_options: ["ci.skip"]
+        )
+      else
+        push_to_git_remote(
+          remote: "origin"
+        )
+      end
+    end # private_lane :prompt_for_git_tag
+
+  desc "print out CI environment variables"
+    private_lane :puts_ci_env_variables do |options|
+      puts "CI: #{ENV['CI']}"
+      puts "CHAT_CHANNEL: #{ENV['CHAT_CHANNEL']}"
+      puts "CHAT_INPUT: #{ENV['CHAT_INPUT']}"
+      puts "CI: #{ENV['CI']}"
+      puts "CI_API_V4_URL: #{ENV['CI_API_V4_URL']}"
+      puts "CI_BUILDS_DIR: #{ENV['CI_BUILDS_DIR']}"
+      puts "CI_COMMIT_BEFORE_SHA: #{ENV['CI_COMMIT_BEFORE_SHA']}"
+      puts "CI_COMMIT_DESCRIPTION: #{ENV['CI_COMMIT_DESCRIPTION']}"
+      puts "CI_COMMIT_MESSAGE: #{ENV['CI_COMMIT_MESSAGE']}"
+      puts "CI_COMMIT_REF_NAME: #{ENV['CI_COMMIT_REF_NAME']}"
+      puts "CI_COMMIT_REF_PROTECTED: #{ENV['CI_COMMIT_REF_PROTECTED']}"
+      puts "CI_COMMIT_REF_SLUG: #{ENV['CI_COMMIT_REF_SLUG']}"
+      puts "CI_COMMIT_SHA: #{ENV['CI_COMMIT_SHA']}"
+      puts "CI_COMMIT_SHORT_SHA: #{ENV['CI_COMMIT_SHORT_SHA']}"
+      puts "CI_COMMIT_BRANCH: #{ENV['CI_COMMIT_BRANCH']}"
+      puts "CI_COMMIT_TAG: #{ENV['CI_COMMIT_TAG']}"
+      puts "CI_COMMIT_TITLE: #{ENV['CI_COMMIT_TITLE']}"
+      puts "CI_COMMIT_TIMESTAMP: #{ENV['CI_COMMIT_TIMESTAMP']}"
+      puts "CI_CONCURRENT_ID: #{ENV['CI_CONCURRENT_ID']}"
+      puts "CI_CONCURRENT_PROJECT_ID: #{ENV['CI_CONCURRENT_PROJECT_ID']}"
+      puts "CI_CONFIG_PATH: #{ENV['CI_CONFIG_PATH']}"
+      puts "CI_DEBUG_TRACE: #{ENV['CI_DEBUG_TRACE']}"
+      puts "CI_DEFAULT_BRANCH: #{ENV['CI_DEFAULT_BRANCH']}"
+      puts "CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX: #{ENV['CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX']}"
+      puts "CI_DEPENDENCY_PROXY_SERVER: #{ENV['CI_DEPENDENCY_PROXY_SERVER']}"
+      puts "CI_DEPENDENCY_PROXY_PASSWORD: #{ENV['CI_DEPENDENCY_PROXY_PASSWORD']}"
+      puts "CI_DEPENDENCY_PROXY_USER: #{ENV['CI_DEPENDENCY_PROXY_USER']}"
+      puts "CI_DEPLOY_FREEZE: #{ENV['CI_DEPLOY_FREEZE']}"
+      puts "CI_DEPLOY_PASSWORD: #{ENV['CI_DEPLOY_PASSWORD']}"
+      puts "CI_DEPLOY_USER: #{ENV['CI_DEPLOY_USER']}"
+      puts "CI_DISPOSABLE_ENVIRONMENT: #{ENV['CI_DISPOSABLE_ENVIRONMENT']}"
+      puts "CI_ENVIRONMENT_NAME: #{ENV['CI_ENVIRONMENT_NAME']}"
+      puts "CI_ENVIRONMENT_SLUG: #{ENV['CI_ENVIRONMENT_SLUG']}"
+      puts "CI_ENVIRONMENT_URL: #{ENV['CI_ENVIRONMENT_URL']}"
+      puts "CI_EXTERNAL_PULL_REQUEST_IID: #{ENV['CI_EXTERNAL_PULL_REQUEST_IID']}"
+      puts "CI_EXTERNAL_PULL_REQUEST_SOURCE_REPOSITORY: #{ENV['CI_EXTERNAL_PULL_REQUEST_SOURCE_REPOSITORY']}"
+      puts "CI_EXTERNAL_PULL_REQUEST_TARGET_REPOSITORY: #{ENV['CI_EXTERNAL_PULL_REQUEST_TARGET_REPOSITORY']}"
+      puts "CI_EXTERNAL_PULL_REQUEST_SOURCE_BRANCH_NAME: #{ENV['CI_EXTERNAL_PULL_REQUEST_SOURCE_BRANCH_NAME']}"
+      puts "CI_EXTERNAL_PULL_REQUEST_SOURCE_BRANCH_SHA: #{ENV['CI_EXTERNAL_PULL_REQUEST_SOURCE_BRANCH_SHA']}"
+      puts "CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_NAME: #{ENV['CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_NAME']}"
+      puts "CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_SHA: #{ENV['CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_SHA']}"
+      puts "CI_HAS_OPEN_REQUIREMENTS: #{ENV['CI_HAS_OPEN_REQUIREMENTS']}"
+      puts "CI_OPEN_MERGE_REQUESTS: #{ENV['CI_OPEN_MERGE_REQUESTS']}"
+      puts "CI_JOB_ID: #{ENV['CI_JOB_ID']}"
+      puts "CI_JOB_IMAGE: #{ENV['CI_JOB_IMAGE']}"
+      puts "CI_JOB_MANUAL: #{ENV['CI_JOB_MANUAL']}"
+      puts "CI_JOB_NAME: #{ENV['CI_JOB_NAME']}"
+      puts "CI_JOB_STAGE: #{ENV['CI_JOB_STAGE']}"
+      puts "CI_JOB_STATUS: #{ENV['CI_JOB_STATUS']}"
+      puts "CI_JOB_TOKEN: #{ENV['CI_JOB_TOKEN']}"
+      puts "CI_JOB_JWT: #{ENV['CI_JOB_JWT']}"
+      puts "CI_JOB_URL: #{ENV['CI_JOB_URL']}"
+      puts "CI_KUBERNETES_ACTIVE: #{ENV['CI_KUBERNETES_ACTIVE']}"
+      puts "CI_MERGE_REQUEST_ASSIGNEES: #{ENV['CI_MERGE_REQUEST_ASSIGNEES']}"
+      puts "CI_MERGE_REQUEST_ID: #{ENV['CI_MERGE_REQUEST_ID']}"
+      puts "CI_MERGE_REQUEST_IID: #{ENV['CI_MERGE_REQUEST_IID']}"
+      puts "CI_MERGE_REQUEST_LABELS: #{ENV['CI_MERGE_REQUEST_LABELS']}"
+      puts "CI_MERGE_REQUEST_MILESTONE: #{ENV['CI_MERGE_REQUEST_MILESTONE']}"
+      puts "CI_MERGE_REQUEST_PROJECT_ID: #{ENV['CI_MERGE_REQUEST_PROJECT_ID']}"
+      puts "CI_MERGE_REQUEST_PROJECT_PATH: #{ENV['CI_MERGE_REQUEST_PROJECT_PATH']}"
+      puts "CI_MERGE_REQUEST_PROJECT_URL: #{ENV['CI_MERGE_REQUEST_PROJECT_URL']}"
+      puts "CI_MERGE_REQUEST_REF_PATH: #{ENV['CI_MERGE_REQUEST_REF_PATH']}"
+      puts "CI_MERGE_REQUEST_SOURCE_BRANCH_NAME: #{ENV['CI_MERGE_REQUEST_SOURCE_BRANCH_NAME']}"
+      puts "CI_MERGE_REQUEST_SOURCE_BRANCH_SHA: #{ENV['CI_MERGE_REQUEST_SOURCE_BRANCH_SHA']}"
+      puts "CI_MERGE_REQUEST_SOURCE_PROJECT_ID: #{ENV['CI_MERGE_REQUEST_SOURCE_PROJECT_ID']}"
+      puts "CI_MERGE_REQUEST_SOURCE_PROJECT_PATH: #{ENV['CI_MERGE_REQUEST_SOURCE_PROJECT_PATH']}"
+      puts "CI_MERGE_REQUEST_SOURCE_PROJECT_URL: #{ENV['CI_MERGE_REQUEST_SOURCE_PROJECT_URL']}"
+      puts "CI_MERGE_REQUEST_TARGET_BRANCH_NAME: #{ENV['CI_MERGE_REQUEST_TARGET_BRANCH_NAME']}"
+      puts "CI_MERGE_REQUEST_TARGET_BRANCH_SHA: #{ENV['CI_MERGE_REQUEST_TARGET_BRANCH_SHA']}"
+      puts "CI_MERGE_REQUEST_TITLE: #{ENV['CI_MERGE_REQUEST_TITLE']}"
+      puts "CI_MERGE_REQUEST_EVENT_TYPE: #{ENV['CI_MERGE_REQUEST_EVENT_TYPE']}"
+      puts "CI_MERGE_REQUEST_DIFF_ID: #{ENV['CI_MERGE_REQUEST_DIFF_ID']}"
+      puts "CI_MERGE_REQUEST_DIFF_BASE_SHA: #{ENV['CI_MERGE_REQUEST_DIFF_BASE_SHA']}"
+      puts "CI_NODE_INDEX: #{ENV['CI_NODE_INDEX']}"
+      puts "CI_NODE_TOTAL: #{ENV['CI_NODE_TOTAL']}"
+      puts "CI_PAGES_DOMAIN: #{ENV['CI_PAGES_DOMAIN']}"
+      puts "CI_PAGES_URL: #{ENV['CI_PAGES_URL']}"
+      puts "CI_PIPELINE_ID: #{ENV['CI_PIPELINE_ID']}"
+      puts "CI_PIPELINE_IID: #{ENV['CI_PIPELINE_IID']}"
+      puts "CI_PIPELINE_SOURCE: #{ENV['CI_PIPELINE_SOURCE']}"
+      puts "CI_PIPELINE_TRIGGERED: #{ENV['CI_PIPELINE_TRIGGERED']}"
+      puts "CI_PIPELINE_URL: #{ENV['CI_PIPELINE_URL']}"
+      puts "CI_PROJECT_CONFIG_PATH: #{ENV['CI_PROJECT_CONFIG_PATH']}"
+      puts "CI_PROJECT_DIR: #{ENV['CI_PROJECT_DIR']}"
+      puts "CI_PROJECT_ID: #{ENV['CI_PROJECT_ID']}"
+      puts "CI_PROJECT_NAME: #{ENV['CI_PROJECT_NAME']}"
+      puts "CI_PROJECT_NAMESPACE: #{ENV['CI_PROJECT_NAMESPACE']}"
+      puts "CI_PROJECT_ROOT_NAMESPACE: #{ENV['CI_PROJECT_ROOT_NAMESPACE']}"
+      puts "CI_PROJECT_PATH: #{ENV['CI_PROJECT_PATH']}"
+      puts "CI_PROJECT_PATH_SLUG: #{ENV['CI_PROJECT_PATH_SLUG']}"
+      puts "CI_PROJECT_REPOSITORY_LANGUAGES: #{ENV['CI_PROJECT_REPOSITORY_LANGUAGES']}"
+      puts "CI_PROJECT_TITLE: #{ENV['CI_PROJECT_TITLE']}"
+      puts "CI_PROJECT_URL: #{ENV['CI_PROJECT_URL']}"
+      puts "CI_PROJECT_VISIBILITY: #{ENV['CI_PROJECT_VISIBILITY']}"
+      puts "CI_REGISTRY: #{ENV['CI_REGISTRY']}"
+      puts "CI_REGISTRY_IMAGE: #{ENV['CI_REGISTRY_IMAGE']}"
+      puts "CI_REGISTRY_PASSWORD: #{ENV['CI_REGISTRY_PASSWORD']}"
+      puts "CI_REGISTRY_USER: #{ENV['CI_REGISTRY_USER']}"
+      puts "CI_REPOSITORY_URL: #{ENV['CI_REPOSITORY_URL']}"
+      puts "CI_RUNNER_DESCRIPTION: #{ENV['CI_RUNNER_DESCRIPTION']}"
+      puts "CI_RUNNER_EXECUTABLE_ARCH: #{ENV['CI_RUNNER_EXECUTABLE_ARCH']}"
+      puts "CI_RUNNER_ID: #{ENV['CI_RUNNER_ID']}"
+      puts "CI_RUNNER_REVISION: #{ENV['CI_RUNNER_REVISION']}"
+      puts "CI_RUNNER_SHORT_TOKEN: #{ENV['CI_RUNNER_SHORT_TOKEN']}"
+      puts "CI_RUNNER_TAGS: #{ENV['CI_RUNNER_TAGS']}"
+      puts "CI_RUNNER_VERSION: #{ENV['CI_RUNNER_VERSION']}"
+      puts "CI_SERVER: #{ENV['CI_SERVER']}"
+      puts "CI_SERVER_URL: #{ENV['CI_SERVER_URL']}"
+      puts "CI_SERVER_HOST: #{ENV['CI_SERVER_HOST']}"
+      puts "CI_SERVER_PORT: #{ENV['CI_SERVER_PORT']}"
+      puts "CI_SERVER_PROTOCOL: #{ENV['CI_SERVER_PROTOCOL']}"
+      puts "CI_SERVER_NAME: #{ENV['CI_SERVER_NAME']}"
+      puts "CI_SERVER_REVISION: #{ENV['CI_SERVER_REVISION']}"
+      puts "CI_SERVER_VERSION: #{ENV['CI_SERVER_VERSION']}"
+      puts "CI_SERVER_VERSION_MAJOR: #{ENV['CI_SERVER_VERSION_MAJOR']}"
+      puts "CI_SERVER_VERSION_MINOR: #{ENV['CI_SERVER_VERSION_MINOR']}"
+      puts "CI_SERVER_VERSION_PATCH: #{ENV['CI_SERVER_VERSION_PATCH']}"
+      puts "CI_SHARED_ENVIRONMENT: #{ENV['CI_SHARED_ENVIRONMENT']}"
+      puts "GITLAB_CI: #{ENV['GITLAB_CI']}"
+      puts "GITLAB_FEATURES: #{ENV['GITLAB_FEATURES']}"
+      puts "GITLAB_USER_EMAIL: #{ENV['GITLAB_USER_EMAIL']}"
+      puts "GITLAB_USER_ID: #{ENV['GITLAB_USER_ID']}"
+      puts "GITLAB_USER_LOGIN: #{ENV['GITLAB_USER_LOGIN']}"
+      puts "GITLAB_USER_NAME: #{ENV['GITLAB_USER_NAME']}"
+      puts "TRIGGER_PAYLOAD: #{ENV['TRIGGER_PAYLOAD']}"
+    end # private_lane :puts_ci_env_variables
+
+  desc "print out .env variables"
+    private_lane :puts_dotenv_variables do |options|
+      if ENV.has_key?('OSCA_MODULE_NAME')
+        puts "OSCA_MODULE_NAME: #{ ENV['OSCA_MODULE_NAME' ] }"
+      else 
+        raise 'OSCA_MODULE_NAME is not defined!'
+      end #if OSCA_MODULE_NAME exists
+      if ENV.has_key?('OSCA_MODULE_PROJECT_PATH')
+        puts "OSCA_MODULE_PROJECT_PATH: #{ ENV['OSCA_MODULE_PROJECT_PATH'] }"
+      else 
+        raise 'OSCA_MODULE_PROJECT_PATH is not defined!'
+      end #if OSCA_MODULE_NAME exists
+    end # private_lane :puts_dotenv_variables
+
+  desc "print out shell parameter"
+    private_lane :puts_shell_parameter do |options|
+      if !options[:marketingVersion].nil?
+        puts "marketing version: #{ options[:marketingVersion] }"
+      else
+        raise "marketingVersion parameter is not defined!"
+      end #if marketingVersion exists
+    end # private_lane :puts_shell_parameter
+
+  # delete spm build artifacts
+  desc "clean package"
+    private_lane :spm_clean do |options|
+      spm(
+        command: "clean",
+        build_path: "./build",
+        configuration: "release",
+        verbose: true
+      )# end fastlane action spm
+    end # private_lane :spm_clean
+
+  # This will reset the complete cache/build directory.
+  # For SPM (command-line) this will affect the .build folder.
+  desc "reset package"
+    private_lane :spm_reset do |options|
+      spm(
+        command: "reset",
+        build_path: "./build",
+        configuration: "release",
+        verbose: true
+      )# end fastlane action spm
+    end # private_lane :spm_reset
+
+  # The swift package update command will touch the Package.resolved file
+  desc "update package"
+    private_lane :spm_update do |options|
+      spm(
+        command: "update",
+        build_path: "./build",
+        configuration: "release",
+        verbose: true
+      )# end fastlane action spm
+    end # private_lane :spm_update
+
+  # The swift package resolve command resolves the dependencies,
+  # taking into account the current version restrictions in the Package.swift manifest
+  # and Package.resolved resolved versions file, and issuing an error if the graph cannot be resolved.
+  desc "resolve package"
+    private_lane :spm_resolve do |options|
+      spm(
+        command: "resolve",
+        build_path: "./build",
+        configuration: "release",
+        verbose: true
+      )# end fastlane action spm
+    end # private_lane :spm_resolve
+
+  desc "build Swift Package"
+    lane :spm_build do |options|
+      # private lane 
+      spm_clean
+      # private lane
+      spm_reset
+      # private lane
+      spm_resolve
+      # private lane
+      spm_update
+
+      spm(
+        command: "build",
+        build_path: "./build",
+        configuration: "release",
+        verbose: true
+      )# end fastlane action spm
+    end # lane spm_build
+
+  desc "xcode build"
+    lane :xcode_build do |options|
+      xcodebuild(
+        scheme: "OSCAEssential",
+        configuration: "Release",
+        clean: true,
+        build: true,
+      )
+    end # lane xcode_build
+
+  desc "capture screen shots"
+    lane :screenshots do |options|
+      capture_screenshots(
+        reinstall_app: true, 
+        stop_after_first_error: false,
+        scheme: "SolingenUITests",
+        configuration: "Release",
+        number_of_retries: 3,
+        app_identifier: "de.solingen.app"
+        )
+    end # lane :screenshots
+end # platform :ios

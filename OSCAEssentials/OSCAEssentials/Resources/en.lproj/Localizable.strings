@@ -1,0 +1,15 @@
+// MARK: - Extension Date+Region
+// Show text for tomorrow
+"tomorrow" = "tomorrow";
+
+// MARK: - Alertable
+// the route alert's title
+"show_route_alert_title" = "Calculate route";
+// the route alert's message
+"show_route_alert_message" = "Which service do you want to use?";
+// the route alert's cancel title
+"show_route_alert_cancel_title" = "Cancel";
+
+"show_error_alert_title" = "Fehler";
+
+"show_error_alert_message" = "Hier ist leider etwas schief gegangen";

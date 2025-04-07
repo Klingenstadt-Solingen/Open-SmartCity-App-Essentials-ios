@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OSCAColorSettings Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/OSCAColorSettings" class="dashAnchor"></a>
+    <a title="OSCAColorSettings Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> 0.0.9 Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        OSCAColorSettings Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ActivityIndicatorView.html">ActivityIndicatorView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppConfiguration.html">AppConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BundleTask.html">BundleTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultBundleErrorLogger.html">DefaultBundleErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultBundleService.html">DefaultBundleService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicHeader.html">DynamicHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/JSONResponseDecoder.html">JSONResponseDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoadingView.html">LoadingView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LocationManager.html">LocationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ModalNavigationRouter.html">ModalNavigationRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NavigationRouter.html">NavigationRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OSCAMapAnnotation.html">OSCAMapAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OSCAPassThroughView.html">OSCAPassThroughView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OSCAScheduler.html">OSCAScheduler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Observable.html">Observable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Observable/Observer.html">– Observer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PermissionManager.html">PermissionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RawDataResponseDecoder.html">RawDataResponseDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RawDataResponseDecoder/CodingKeys.html">– CodingKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RepositoryTask.html">RepositoryTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RootNavigationRouter.html">RootNavigationRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SelfSizedCollectionView.html">SelfSizedCollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SelfSizedTableView.html">SelfSizedTableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BodyEncoding.html">BodyEncoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BundleError.html">BundleError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DataTransferError.html">DataTransferError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DeviceService.html">DeviceService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DynamicHeaderHeight.html">DynamicHeaderHeight</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Environment.html">Environment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Environment/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HTTPMethodType.html">HTTPMethodType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:14OSCAEssentials20LocationManagerErrorO">LocationManagerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NetworkError.html">NetworkError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAColorVariants.html">OSCAColorVariants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParse.html">OSCAParse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParse/BoolFromString.html">– BoolFromString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParse/BoolFromDict.html">– BoolFromDict</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParseError.html">OSCAParseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParsePersistentStorage.html">OSCAParsePersistentStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCARepository.html">OSCARepository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCARepository/OSCACachingStrategy.html">– OSCACachingStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PermissionType.html">PermissionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RepositoryError.html">RepositoryError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RequestGenerationError.html">RequestGenerationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/URLType.html">URLType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CLLocationCoordinate2D.html">CLLocationCoordinate2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Error.html">Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSNotification.html">NSNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSNotification/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UILabel.html">UILabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIStackView.html">UIStackView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableViewController.html">UITableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITapGestureRecognizer.html">UITapGestureRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITextField.html">UITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:objc(cs)NSURLSessionTask">URLSessionTask</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:14OSCAEssentials12printIfDebugyySSF">printIfDebug(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ActivityIndicatable.html">ActivityIndicatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Alertable.html">Alertable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BundleCancelable.html">BundleCancelable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BundleErrorLogger.html">BundleErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BundleService.html">BundleService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Cancelable.html">Cancelable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ConnectionError.html">ConnectionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataTransferErrorLogger.html">DataTransferErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataTransferErrorResolver.html">DataTransferErrorResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataTransferService.html">DataTransferService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EntitiesPageable.html">EntitiesPageable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Entity.html">Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkCancelable.html">NetworkCancelable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkConfigurable.html">NetworkConfigurable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkErrorLogger.html">NetworkErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkService.html">NetworkService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkSessionManager.html">NetworkSessionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAColorConfig.html">OSCAColorConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAFontConfig.html">OSCAFontConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAModule.html">OSCAModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAParseClassObject.html">OSCAParseClassObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAUIModule.html">OSCAUIModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAUIModuleConfig.html">OSCAUIModuleConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Requestable.html">Requestable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseDecoder.html">ResponseDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponsePageTransferable.html">ResponsePageTransferable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseRequestable.html">ResponseRequestable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseTransferable.html">ResponseTransferable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponsesTransferable.html">ResponsesTransferable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Router.html">Router</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoryboardInstantiable.html">StoryboardInstantiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UseCase.html">UseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ViewControllerLifecycleBehavior.html">ViewControllerLifecycleBehavior</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ApiDataNetworkConfig.html">ApiDataNetworkConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAColorSettings.html">OSCAColorSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAColorSettings/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAEssentials.html">OSCAEssentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAFontSettings.html">OSCAFontSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAFontSettings/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAGeoPoint.html">OSCAGeoPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParseData.html">ParseData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParseDate.html">ParseDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParseGeoPoint.html">ParseGeoPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:14OSCAEssentials7TabItemV">TabItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UniqueIdentifier.html">UniqueIdentifier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14OSCAEssentials13GeoPointTuplea">GeoPointTuple</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>OSCAColorSettings</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">OSCAColorSettings</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/OSCAColorConfig.html">OSCAColorConfig</a></span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+
+                </div>
+              </div>
+            
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV4KeysO"></a>
+                    <a name="//apple_ref/swift/Enum/Keys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV4KeysO">Keys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="../Structs/OSCAColorSettings/Keys.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Keys</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV13primaryDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/primaryDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV13primaryDarkerSo7UIColorCvp">primaryDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>primary color darker
+this color should be displayed most frequently and be used for important actions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">primaryDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11primaryDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/primaryDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11primaryDarkSo7UIColorCvp">primaryDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>primary color dark
+this color should be displayed most frequently and be used for important actions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">primaryDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12primaryColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/primaryColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12primaryColorSo7UIColorCvp">primaryColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>primary color
+this color should be displayed most frequently and be used for important actions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">primaryColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12primaryLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/primaryLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12primaryLightSo7UIColorCvp">primaryLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>primary color light
+this color should be displayed most frequently and be used for important actions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">primaryLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV14primaryLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/primaryLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV14primaryLighterSo7UIColorCvp">primaryLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>primary color lighter
+this color should be displayed most frequently and be used for important actions</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">primaryLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12accentDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/accentDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12accentDarkerSo7UIColorCvp">accentDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>accent color darker
+this color should be applied sparingly to highlight information or add personality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">accentDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10accentDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/accentDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10accentDarkSo7UIColorCvp">accentDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>accent color dark
+this color should be applied sparingly to highlight information or add personality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">accentDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11accentColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/accentColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11accentColorSo7UIColorCvp">accentColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>accent color
+this color should be applied sparingly to highlight information or add personality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">accentColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11accentLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/accentLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11accentLightSo7UIColorCvp">accentLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>accent color light
+this color should be applied sparingly to highlight information or add personality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">accentLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV13accentLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/accentLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV13accentLighterSo7UIColorCvp">accentLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>accent color lighter
+this color should be applied sparingly to highlight information or add personality</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">accentLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV13successDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/successDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV13successDarkerSo7UIColorCvp">successDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>success color darker
+this color should be used to show positive feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">successDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11successDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/successDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11successDarkSo7UIColorCvp">successDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>success color dark
+this color should be used to show positive feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">successDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12successColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/successColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12successColorSo7UIColorCvp">successColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>success color
+this color should be used to show positive feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">successColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12successLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/successLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12successLightSo7UIColorCvp">successLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>success color light
+this color should be used to show positive feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">successLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV14successLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/successLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV14successLighterSo7UIColorCvp">successLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>success color lighter
+this color should be used to show positive feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">successLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV13warningDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/warningDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV13warningDarkerSo7UIColorCvp">warningDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>warning color darker
+this color should be used to show warning feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">warningDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11warningDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/warningDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11warningDarkSo7UIColorCvp">warningDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>warning color dark
+this color should be used to show warning feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">warningDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12warningColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/warningColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12warningColorSo7UIColorCvp">warningColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>warning color
+this color should be used to show warning feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">warningColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12warningLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/warningLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12warningLightSo7UIColorCvp">warningLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>warning color light
+this color should be used to show warning feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">warningLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV14warningLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/warningLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV14warningLighterSo7UIColorCvp">warningLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>warning color lighter
+this color should be used to show warning feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">warningLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11errorDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/errorDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11errorDarkerSo7UIColorCvp">errorDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>error color darker
+this color should be used to show negative feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV9errorDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/errorDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV9errorDarkSo7UIColorCvp">errorDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>error color dark
+this color should be used to show negative feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10errorColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/errorColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10errorColorSo7UIColorCvp">errorColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>error color
+this color should be used to show negative feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10errorLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/errorLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10errorLightSo7UIColorCvp">errorLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>error color light
+this color should be used to show negative feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12errorLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/errorLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12errorLighterSo7UIColorCvp">errorLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>error color lighter
+this color should be used to show negative feedback or status</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">errorLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10grayDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/grayDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10grayDarkerSo7UIColorCvp">grayDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>gray color darker
+this color should be used for backgrounds, icons, and division lines</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">grayDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV8grayDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/grayDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV8grayDarkSo7UIColorCvp">grayDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>gray color dark
+this color should be used for backgrounds, icons, and division lines</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">grayDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV9grayColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/grayColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV9grayColorSo7UIColorCvp">grayColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>gray color
+this color should be used for backgrounds, icons, and division lines</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">grayColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV9grayLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/grayLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV9grayLightSo7UIColorCvp">grayLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>gray color light
+this color should be used for backgrounds, icons, and division lines</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">grayLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11grayLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/grayLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11grayLighterSo7UIColorCvp">grayLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>gray color lighter
+this color should be used for backgrounds, icons, and division lines</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">grayLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11blackDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/blackDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11blackDarkerSo7UIColorCvp">blackDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>black color darker
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">blackDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV9blackDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/blackDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV9blackDarkSo7UIColorCvp">blackDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>black color dark
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">blackDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10blackColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/blackColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10blackColorSo7UIColorCvp">blackColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>black color
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">blackColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10blackLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/blackLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10blackLightSo7UIColorCvp">blackLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>black color light
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">blackLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12blackLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/blackLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12blackLighterSo7UIColorCvp">blackLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>black color lighter
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">blackLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV11whiteDarkerSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/whiteDarker" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV11whiteDarkerSo7UIColorCvp">whiteDarker</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>white color darker
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">whiteDarker</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV9whiteDarkSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/whiteDark" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV9whiteDarkSo7UIColorCvp">whiteDark</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>white color dark
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">whiteDark</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10whiteColorSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/whiteColor" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10whiteColorSo7UIColorCvp">whiteColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>white color
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">whiteColor</span><span class="p">:</span> <span class="kt">UIColor</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV10whiteLightSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/whiteLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV10whiteLightSo7UIColorCvp">whiteLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>white color light
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">whiteLight</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12whiteLighterSo7UIColorCvp"></a>
+                    <a name="//apple_ref/swift/Property/whiteLighter" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12whiteLighterSo7UIColorCvp">whiteLighter</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>white color lighter
+this color should be used for text</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">whiteLighter</span><span class="p">:</span> <span class="kt">UIColor</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials17OSCAColorSettingsV12primaryColor06accentE007successE007warningE005errorE004grayE005blackE005whiteE0ACSo7UIColorC_A7Mtcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(primaryColor:accentColor:successColor:warningColor:errorColor:grayColor:blackColor:whiteColor:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials17OSCAColorSettingsV12primaryColor06accentE007successE007warningE005errorE004grayE005blackE005whiteE0ACSo7UIColorC_A7Mtcfc">init(primaryColor:<wbr>accentColor:<wbr>successColor:<wbr>warningColor:<wbr>errorColor:<wbr>grayColor:<wbr>blackColor:<wbr>whiteColor:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">primaryColor</span>    <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0x005AAA</span><span class="p">),</span>
+            <span class="nv">accentColor</span>     <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0xFFD503</span><span class="p">),</span>
+            <span class="nv">successColor</span>    <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0x3CC13B</span><span class="p">),</span>
+            <span class="nv">warningColor</span>    <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0xF3BB1C</span><span class="p">),</span>
+            <span class="nv">errorColor</span>      <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0xF03738</span><span class="p">),</span>
+            <span class="nv">grayColor</span>       <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0xC2C9D1</span><span class="p">),</span>
+            <span class="nv">blackColor</span>      <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0x000000</span><span class="p">),</span>
+            <span class="nv">whiteColor</span>      <span class="p">:</span> <span class="kt">UIColor</span> <span class="o">=</span> <span class="kt">UIColor</span><span class="p">(</span><span class="nv">rgb</span><span class="p">:</span><span class="mh">0xFFFFFF</span><span class="p">)</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener">Stephan Breidenbach</a>. All rights reserved. (Last updated: 2022-03-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

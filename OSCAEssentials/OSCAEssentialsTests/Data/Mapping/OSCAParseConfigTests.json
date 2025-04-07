@@ -1,0 +1,95 @@
+{
+    "params": {
+        "pushChunkSize": 250,
+        "imprintText": "<p><strong><span style=\"font-size: 15px; font-family: Helvetica;\">Haftungshinweis</span></strong></p>\n<p><i style=\"font-family: Helvetica; font-size: 10pt;\">Die Stadt Solingen und die Technischen Betriebe Solingen &uuml;bernehmen keinerlei Gew&auml;hr f&uuml;r die Aktualit&auml;t, Korrektheit, Vollst&auml;ndigkeit oder Qualit&auml;t der bereitgestellten Informationen. Haftungsanspr&uuml;che gegen die Stadt Solingen, welche sich auf Sch&auml;den materieller Art beziehen, die durch die Nutzung oder Nichtnutzung der dargebotenen Informationen bzw. durch die Nutzung fehlerhafter und unvollst&auml;ndiger Informationen verursacht wurden, sind grunds&auml;tzlich ausgeschlossen, sofern seitens der Stadt Solingen kein nachweislich vors&auml;tzliches oder grob fahrl&auml;ssiges Verschulden vorliegt. Dies gilt auch f&uuml;r Sch&auml;den aus der Verletzung des Lebens, des K&ouml;rpers oder der Gesundheit unter der Einschr&auml;nkung, dass bereits fahrl&auml;ssiges Verschulden seitens der Stadt nicht von dem Haftungsausschluss erfasst ist.</i></p>\n<p><strong><span style=\"font-size: 15px; font-family: Helvetica;\">Herausgeber</span></strong></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Stadt Solingen - Der Oberb&uuml;rgermeister<br>vertreten durch Herrn Tim-Oliver Kurzbach</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Walter-Scheel-Platz 1<br>42651 Solingen</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Umsatzsteueridentifikationsnr. (USt-ID-Nr.)<br>DE - 120 871 761</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Postanschrift</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Stadt Solingen<br>Postfach 100165<br>42601 Solingen</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Zentrale Rufnummern</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">fon +49 (0) 212 / 290-0<br>fax +49 (0) 212 / 290-2109</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Zentrale E-Mail-Anschrift</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><a href=\"mailto:post@solingen.de\">post@solingen.de</a></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Ansprechpartner&nbsp;</strong><strong>f&uuml;r Fragen rund um eGovernment-Angebote der Stadt Solingen</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Nils Gerken<br>Stabsstelle solingen.digital</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">fon +49 212/290-2002<br>fax +49 212/290-742002<br><a href=\"mailto:solingen.digital@solingen.de\">solingen.digital@solingen.de</a></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Anschrift</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Stadt Solingen<br>Stabsstelle solingen.digital</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Walter-Scheel-Platz 1<br>42651 Solingen</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Umsetzung</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Mammut Media Marketing UG (haftungsbeschr&auml;nkt)</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">Gr&uuml;newalder Str. 29-31<br>42657 Solingen</span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">fon: +49 212 / 24091400<br><a href=\"mailto:hello@mammutmedia.eu\">hello@mammutmedia.eu</a><br><a href=\"https://bit.ly/mammutmedia\">www.mammutmedia.eu</a></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\"><strong>Technische Betriebe Solingen</strong></span></span></p>\n<p><span style=\"font-family: Helvetica;\"><span style=\"font-size: 15px;\">D&uuml;ltgenstaler Stra&szlig;e 61<br>42719 Solingen</span></span></p>\n<p><a href=\"mailto:tbs.app@solingen.de\"><span style=\"font-size: 15px; font-family: Helvetica;\">tbs.app@solingen.de</span></a></p>",
+        "coronaTitleImage": "https://mammut-hosting.de/solingenapp/coronaHeader.png",
+        "coronaMapKML": "https://geoportal.solingen.de/buergerservice1/ressourcen/kml/maskenpflicht.kml",
+        "accessibilityText": "tbd",
+        "schedule": {
+            "push_notification": {
+                "lastCompleted": {
+                    "finishedOn": 1675266960027,
+                    "processedOn": 1675266960002,
+                    "result": "No scheduled push notifications"
+                },
+                "lastError": null
+            },
+            "check_form_errors": {
+                "lastCompleted": {
+                    "finishedOn": 1675256400195,
+                    "processedOn": 1675256400002,
+                    "result": {
+                        "ContactFormData": 0,
+                        "CoworkitFormData": 0,
+                        "DefectFormData": 0
+                    }
+                },
+                "lastError": null
+            },
+            "kunst_in_wald": {
+                "lastCompleted": {
+                    "finishedOn": 1675215600743,
+                    "processedOn": 1675215600002,
+                    "result": {
+                        "newItems": 0,
+                        "updatedItems": 16,
+                        "deletedItems": 0
+                    }
+                },
+                "lastError": null
+            },
+            "screen_transfer_cleanup": {
+                "lastCompleted": {
+                    "finishedOn": 1675266600039,
+                    "processedOn": 1675266600002,
+                    "result": {
+                        "deletedItems": 0
+                    }
+                },
+                "lastError": null
+            },
+            "solingen_de": {
+                "lastCompleted": {
+                    "finishedOn": 1674075601320,
+                    "processedOn": 1674075600089,
+                    "result": {
+                        "newItems": 0,
+                        "updatedItems": 2
+                    }
+                },
+                "lastError": {}
+            },
+            "schedule_health": {
+                "lastError": {
+                    "message": "Cannot read property 'cron' of undefined",
+                    "code": 141
+                }
+            },
+            "job_posting": {
+                "lastError": {
+                    "name": "TimeoutError"
+                }
+            }
+        },
+        "scheduleNotificationEmail": "f.nithammer@mammutmedia.eu",
+        "privacyText": "Privacy Text Test",
+        "defectFormEmailTemplate": "tbd",
+        "kintoCityId": "558fc35d-8bae-4a1f-a219-34573dee7574",
+        "pushActive": true,
+        "coronaMapPDF": "https://www.solingen.de/C1257EBD00357318/files/karten-maskenpflicht_2-11-20.pdf/$file/karten-maskenpflicht_2-11-20.pdf"
+    },
+    "masterKeyOnly": {
+        "pushChunkSize": false,
+        "imprintText": false,
+        "coronaTitleImage": false,
+        "coronaMapKML": false,
+        "accessibilityText": false,
+        "schedule": false,
+        "scheduleNotificationEmail": false,
+        "privacyText": false,
+        "defectFormEmailTemplate": false,
+        "kintoCityId": false,
+        "pushActive": false,
+        "coronaMapPDF": false
+    }
+}

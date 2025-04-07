@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OSCAFontSettings Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/OSCAFontSettings" class="dashAnchor"></a>
+    <a title="OSCAFontSettings Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> 0.0.9 Docs</a> (100% documented)</p>
+        <div class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" alt=""/>
+        OSCAFontSettings Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ActivityIndicatorView.html">ActivityIndicatorView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/AppConfiguration.html">AppConfiguration</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BundleTask.html">BundleTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultBundleErrorLogger.html">DefaultBundleErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DefaultBundleService.html">DefaultBundleService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DynamicHeader.html">DynamicHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Endpoint.html">Endpoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/JSONResponseDecoder.html">JSONResponseDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LoadingView.html">LoadingView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/LocationManager.html">LocationManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ModalNavigationRouter.html">ModalNavigationRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NavigationRouter.html">NavigationRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OSCAMapAnnotation.html">OSCAMapAnnotation</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OSCAPassThroughView.html">OSCAPassThroughView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/OSCAScheduler.html">OSCAScheduler</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Observable.html">Observable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Observable/Observer.html">– Observer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PermissionManager.html">PermissionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RawDataResponseDecoder.html">RawDataResponseDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RawDataResponseDecoder/CodingKeys.html">– CodingKeys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RepositoryTask.html">RepositoryTask</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RootNavigationRouter.html">RootNavigationRouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SelfSizedCollectionView.html">SelfSizedCollectionView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/SelfSizedTableView.html">SelfSizedTableView</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/BodyEncoding.html">BodyEncoding</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/BundleError.html">BundleError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DataTransferError.html">DataTransferError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DeviceService.html">DeviceService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/DynamicHeaderHeight.html">DynamicHeaderHeight</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Environment.html">Environment</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/Environment/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/HTTPMethodType.html">HTTPMethodType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums.html#/s:14OSCAEssentials20LocationManagerErrorO">LocationManagerError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/NetworkError.html">NetworkError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAColorVariants.html">OSCAColorVariants</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParse.html">OSCAParse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParse/BoolFromString.html">– BoolFromString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParse/BoolFromDict.html">– BoolFromDict</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParseError.html">OSCAParseError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCAParsePersistentStorage.html">OSCAParsePersistentStorage</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCARepository.html">OSCARepository</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/OSCARepository/OSCACachingStrategy.html">– OSCACachingStrategy</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/PermissionType.html">PermissionType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RepositoryError.html">RepositoryError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RequestGenerationError.html">RequestGenerationError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/URLType.html">URLType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CGSize.html">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CLLocationCoordinate2D.html">CLLocationCoordinate2D</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Error.html">Error</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSMutableAttributedString.html">NSMutableAttributedString</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSNotification.html">NSNotification</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSNotification/Name.html">– Name</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Publisher.html">Publisher</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIApplication.html">UIApplication</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIColor.html">UIColor</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIImageView.html">UIImageView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UILabel.html">UILabel</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIStackView.html">UIStackView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITableViewController.html">UITableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITapGestureRecognizer.html">UITapGestureRecognizer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UITextField.html">UITextField</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIView.html">UIView</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UIViewController.html">UIViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:objc(cs)NSURLSessionTask">URLSessionTask</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:14OSCAEssentials12printIfDebugyySSF">printIfDebug(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/ActivityIndicatable.html">ActivityIndicatable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Alertable.html">Alertable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BundleCancelable.html">BundleCancelable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BundleErrorLogger.html">BundleErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/BundleService.html">BundleService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Cancelable.html">Cancelable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ConnectionError.html">ConnectionError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataTransferErrorLogger.html">DataTransferErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataTransferErrorResolver.html">DataTransferErrorResolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataTransferService.html">DataTransferService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EntitiesPageable.html">EntitiesPageable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Entity.html">Entity</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkCancelable.html">NetworkCancelable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkConfigurable.html">NetworkConfigurable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkErrorLogger.html">NetworkErrorLogger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkService.html">NetworkService</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/NetworkSessionManager.html">NetworkSessionManager</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAColorConfig.html">OSCAColorConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAFontConfig.html">OSCAFontConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAModule.html">OSCAModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAParseClassObject.html">OSCAParseClassObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAUIModule.html">OSCAUIModule</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/OSCAUIModuleConfig.html">OSCAUIModuleConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Requestable.html">Requestable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseDecoder.html">ResponseDecoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponsePageTransferable.html">ResponsePageTransferable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseRequestable.html">ResponseRequestable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponseTransferable.html">ResponseTransferable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ResponsesTransferable.html">ResponsesTransferable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Router.html">Router</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/StoryboardInstantiable.html">StoryboardInstantiable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/UseCase.html">UseCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/ViewControllerLifecycleBehavior.html">ViewControllerLifecycleBehavior</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/ApiDataNetworkConfig.html">ApiDataNetworkConfig</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAColorSettings.html">OSCAColorSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAColorSettings/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAEssentials.html">OSCAEssentials</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAFontSettings.html">OSCAFontSettings</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAFontSettings/Keys.html">– Keys</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/OSCAGeoPoint.html">OSCAGeoPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParseData.html">ParseData</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParseDate.html">ParseDate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ParseGeoPoint.html">ParseGeoPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:14OSCAEssentials7TabItemV">TabItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UniqueIdentifier.html">UniqueIdentifier</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14OSCAEssentials13GeoPointTuplea">GeoPointTuple</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>OSCAFontSettings</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">OSCAFontSettings</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/OSCAFontConfig.html">OSCAFontConfig</a></span><span class="p">,</span> <span class="kt">Equatable</span></code></pre>
+
+                </div>
+              </div>
+            <p>App-wide font settings, conforming to <code><a href="../Protocols/OSCAFontConfig.html">OSCAFontConfig</a></code>-protocol</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV4KeysO"></a>
+                    <a name="//apple_ref/swift/Enum/Keys" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV4KeysO">Keys</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                        <a href="../Structs/OSCAFontSettings/Keys.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">Keys</span> <span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt">CaseIterable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV12displayHeavySo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/displayHeavy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV12displayHeavySo6UIFontCvp">displayHeavy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face display heavy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">displayHeavy</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV12displayLightSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/displayLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV12displayLightSo6UIFontCvp">displayLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face disply light</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">displayLight</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV13headlineHeavySo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/headlineHeavy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV13headlineHeavySo6UIFontCvp">headlineHeavy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face headline heavy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">headlineHeavy</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV13headlineLightSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/headlineLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV13headlineLightSo6UIFontCvp">headlineLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face headline lght</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">headlineLight</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV10titleHeavySo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/titleHeavy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV10titleHeavySo6UIFontCvp">titleHeavy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face title heavy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">titleHeavy</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV10titleLightSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/titleLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV10titleLightSo6UIFontCvp">titleLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face title light</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">titleLight</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV14subheaderHeavySo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/subheaderHeavy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV14subheaderHeavySo6UIFontCvp">subheaderHeavy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face sub header heavy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">subheaderHeavy</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV14subheaderLightSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/subheaderLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV14subheaderLightSo6UIFontCvp">subheaderLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face sub header light</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">subheaderLight</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV9bodyHeavySo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/bodyHeavy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV9bodyHeavySo6UIFontCvp">bodyHeavy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face body heavy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bodyHeavy</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV9bodyLightSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/bodyLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV9bodyLightSo6UIFontCvp">bodyLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face body light</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">bodyLight</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV12captionHeavySo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/captionHeavy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV12captionHeavySo6UIFontCvp">captionHeavy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face caption heavy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">captionHeavy</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV12captionLightSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/captionLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV12captionLightSo6UIFontCvp">captionLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face caption Light</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">captionLight</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV10smallHeavySo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/smallHeavy" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV10smallHeavySo6UIFontCvp">smallHeavy</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face small heavy</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">smallHeavy</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV10smallLightSo6UIFontCvp"></a>
+                    <a name="//apple_ref/swift/Property/smallLight" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV10smallLightSo6UIFontCvp">smallLight</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>type face small light</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">smallLight</span><span class="p">:</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV12displayHeavy0D5Light08headlineE00gF005titleE00hF009subheaderE00iF004bodyE00jF007captionE00kF005smallE00lF0ACSo6UIFontC_A13Stcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(displayHeavy:displayLight:headlineHeavy:headlineLight:titleHeavy:titleLight:subheaderHeavy:subheaderLight:bodyHeavy:bodyLight:captionHeavy:captionLight:smallHeavy:smallLight:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV12displayHeavy0D5Light08headlineE00gF005titleE00hF009subheaderE00iF004bodyE00jF007captionE00kF005smallE00lF0ACSo6UIFontC_A13Stcfc">init(displayHeavy:<wbr>displayLight:<wbr>headlineHeavy:<wbr>headlineLight:<wbr>titleHeavy:<wbr>titleLight:<wbr>subheaderHeavy:<wbr>subheaderLight:<wbr>bodyHeavy:<wbr>bodyLight:<wbr>captionHeavy:<wbr>captionLight:<wbr>smallHeavy:<wbr>smallLight:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">displayHeavy</span>    <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">),</span>
+            <span class="nv">displayLight</span>    <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">36</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">),</span>
+            <span class="nv">headlineHeavy</span>   <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">),</span>
+            <span class="nv">headlineLight</span>   <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">24</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">),</span>
+            <span class="nv">titleHeavy</span>      <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">),</span>
+            <span class="nv">titleLight</span>      <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">),</span>
+            <span class="nv">subheaderHeavy</span>  <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">),</span>
+            <span class="nv">subheaderLight</span>  <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">),</span>
+            <span class="nv">bodyHeavy</span>       <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">),</span>
+            <span class="nv">bodyLight</span>       <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">),</span>
+            <span class="nv">captionHeavy</span>    <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">),</span>
+            <span class="nv">captionLight</span>    <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">),</span>
+            <span class="nv">smallHeavy</span>      <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">bold</span><span class="p">),</span>
+            <span class="nv">smallLight</span>      <span class="p">:</span> <span class="kt">UIFont</span> <span class="o">=</span> <span class="o">.</span><span class="nf">systemFont</span><span class="p">(</span><span class="nv">ofSize</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="nv">weight</span><span class="p">:</span> <span class="o">.</span><span class="n">regular</span><span class="p">))</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14OSCAEssentials16OSCAFontSettingsV11getTypeFace2bySo6UIFontCAC4KeysO_tF"></a>
+                    <a name="//apple_ref/swift/Method/getTypeFace(by:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14OSCAEssentials16OSCAFontSettingsV11getTypeFace2bySo6UIFontCAC4KeysO_tF">getTypeFace(by:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>get the type face by key</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">getTypeFace</span><span class="p">(</span><span class="n">by</span> <span class="nv">key</span><span class="p">:</span> <span class="kt">OSCAFontSettings</span><span class="o">.</span><span class="kt"><a href="../Structs/OSCAFontSettings/Keys.html">Keys</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIFont</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2022 <a class="link" href="" target="_blank" rel="external noopener">Stephan Breidenbach</a>. All rights reserved. (Last updated: 2022-03-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.2</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</html>

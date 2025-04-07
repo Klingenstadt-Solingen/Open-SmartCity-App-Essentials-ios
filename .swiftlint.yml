@@ -1,0 +1,77 @@
+custom_rules:
+  missing_solingen_prefix:
+    included: ".*\\.swift"
+    excluded: ".*Tests\\.swift"
+    name: "Missing Stadt Solingen: prefix"
+    regex: "\\n\\n(\\s*///\\s(?!Stadt Solingen:\\s)\\w+[^\\n]*$)"
+    match_kinds:
+      - doccomment
+    message: "Doc string should always start with the Stadt Solingen: prefix"
+    severity: warning
+  unnecessary_type:
+    name: "Unnecessary Type"
+    regex: '(?sm)[ \ta-zA-Z0-9]?(?:let|var){1} [ \ta-zA-Z0-9]+?:[ \t]+?([a-zA-Z0-9]+?)[\t ]+?=[\t ]?\1'
+    message: "Type Definition Not Needed"
+    severity: warning
+  comments_space:
+    name: "Space After Comment"
+    regex: '(//\w+|///\w+)'
+    message: "There should be a space between the start of a comment and the first character."
+    severity: warning
+    match_kinds:
+      - comment
+      - doccomment
+      - doccomment.field
+  empty_commented_line:
+    name: "Empty Commented Out Line"
+    regex: '(\t+| +)//$'
+    message: "Remove useless comment lines or use /* format */"
+    severity: warning
+
+disabled_rules:
+  - operator_whitespace
+  - nesting
+  - missing_solingen_prefix
+  - line_length
+  - file_length
+  - redundant_void_return
+  # transient, fixed by swiftformat
+  - colon
+  - leading_whitespace
+  - opening_brace
+  - switch_case_alignment
+  - trailing_comma
+  - trailing_newline
+  - trailing_whitespace
+  - vertical_whitespace
+  - inclusive_language
+
+excluded:
+  - vendor # Folder created by bundle install command that we run on CI
+  - DerivedData
+
+type_name:
+  excluded: 
+    - ID
+identifier_name:
+  excluded:
+    - vc
+    - id
+    - i
+    - n
+    - x
+    - y
+    - z
+function_body_length:
+    warning: 300
+    error: 500
+function_parameter_count:
+    warning: 6
+    error: 8
+type_body_length:
+    warning: 1000
+    error: 1500
+cyclomatic_complexity:
+    warning: 15
+    error: 25
+reporter: "xcode"
